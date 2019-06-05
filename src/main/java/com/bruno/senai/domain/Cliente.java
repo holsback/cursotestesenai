@@ -23,7 +23,7 @@ public class Cliente implements Serializable {
 	// Atributos serão Campos na tabela
 	private String nome;
 	private String cpfOuCnpj;
-	//Será usado no enum
+	// Será usado no enum
 	private Integer tipo;
 
 	// O banco de dados não deixa repetir os dados
@@ -36,24 +36,25 @@ public class Cliente implements Serializable {
 
 	// Construtor
 	public Cliente(Integer idCliente, String nome, String cpfOuCnpj, String email, TipoCliente tipo) {
-		     /*Atributo busca a class*/
+		/* Atributo busca a class */
 		super();
 		this.idCliente = idCliente;
 		this.nome = nome;
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.email = email;
-		//Aqui nao vai telefone
-		//Dentro da class busca o cod
+		// Aqui nao vai telefone
+		// Dentro da class busca o cod
 		this.tipo = tipo.getCod();
-		}
-    
+	}
+
 	public TipoCliente getTipo() {
 		return TipoCliente.toEnum(tipo);
 	}
+
 	public void setTipo(TipoCliente tipo) {
 		this.tipo = tipo.getCod();
 	}
-	
+
 	public Integer getIdCliente() {
 		return idCliente;
 	}
@@ -118,7 +119,5 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
-
-
 
 }
