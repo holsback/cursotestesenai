@@ -1,9 +1,12 @@
 package com.bruno.senai.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -11,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.bruno.senai.domain.enuns.TipoCliente;
 
@@ -42,7 +46,7 @@ public class Cliente implements Serializable {
 		this.nome = nome;
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.email = email;
-		// Aqui nao vai telefone
+		// Aqui não vai telefone
 		// Dentro da class busca o cod
 		this.tipo = tipo.getCod();
 	}
@@ -119,5 +123,9 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
+
+	// cascade e para se excluir cliente o endereco seja excluido
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL) // varios enderecos de um cliente
+	private List<Endereco> enderecos = new ArrayList<>();
 
 }
