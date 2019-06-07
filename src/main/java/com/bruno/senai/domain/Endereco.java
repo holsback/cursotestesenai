@@ -26,7 +26,7 @@ public class Endereco implements Serializable {
 
 	@JsonIgnore // Para nao ficar indo e voltando informacao sem parar
 	@ManyToOne
-	@JoinColumn(name = "cliente_id") // Varios enderecos de um cliente
+	@JoinColumn(name = "cidade_id") // Varios enderecos de um cliente
 	private Cliente cliente;
 
 	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep,
