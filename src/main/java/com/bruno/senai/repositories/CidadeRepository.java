@@ -1,4 +1,4 @@
-package repositories;
+package com.bruno.senai.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
