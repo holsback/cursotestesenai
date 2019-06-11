@@ -51,6 +51,14 @@ public class Cliente implements Serializable {
 		this.tipo = tipo.getCod();
 	}
 
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
 	public TipoCliente getTipo() {
 		return TipoCliente.toEnum(tipo);
 	}
@@ -97,6 +105,10 @@ public class Cliente implements Serializable {
 
 	public void setTelefones(Set<String> telefones) {
 		this.telefones = telefones;
+	}
+
+	public void setTipo(Integer tipo) {
+		this.tipo = tipo;
 	}
 
 	@Override
