@@ -56,4 +56,10 @@ public class ClienteService {
 		this.enderecoRepository = enderecoRepository;
 	}
 
+	//para deletar um cliente
+	public void delete (Integer id) {
+		buscar(id);
+		repo.deleteById(id);
+	}
+	
 }
