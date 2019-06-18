@@ -39,6 +39,11 @@ public class Cliente implements Serializable {
 	private Set<String> telefones = new HashSet<>();
 
 	// Construtor
+
+	public Cliente() {
+
+	}
+
 	public Cliente(Integer idCliente, String nome, String cpfOuCnpj, String email, TipoCliente tipo) {
 		/* Atributo busca a class */
 		super();
